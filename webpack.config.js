@@ -3,6 +3,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const getCSSModuleLocalIdent = require("react-dev-utils/getCSSModuleLocalIdent");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -62,6 +63,7 @@ module.exports = {
       filename: "[name].[hash].css",
       chunkFilename: "[id]-[hash].css",
     }),
+    new Dotenv(),
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
